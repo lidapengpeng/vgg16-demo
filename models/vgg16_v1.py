@@ -1,3 +1,8 @@
+"""
+Author: @dapeng
+File_name: vgg16_v1.py
+Description: 最基础写法，适合刚开始练手
+"""
 import torchvision
 from torch import nn
 from torch.nn import MaxPool2d

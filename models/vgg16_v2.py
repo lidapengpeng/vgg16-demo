@@ -1,3 +1,8 @@
+"""
+Author: @dapeng
+File_name: vgg16_v2.py
+Description: 最基础写法进阶版本，改写了网络结构的写法
+"""
 import torchvision
 from torch import nn
 
@@ -7,6 +12,8 @@ class Vgg16(nn.Module):
         super(Vgg16, self).__init__()
         # 定义搭建网络的模块
         # 送入Conv2d的必须是四维tensor,[batch, channel, width, height]
+        # 观察Conv2d的输入输出通道，每一层的输出就是下一层的输入，
+        # 第一个Conv2d的输入通道是3
         self.features = nn.Sequential(
             nn.Conv2d(3, 64, kernel_size=3, stride=1, padding=1),
             nn.ReLU(inplace=True),
